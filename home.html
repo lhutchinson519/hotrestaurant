@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tables Page</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hot Restaurant</h1>
+            <h3>We only have 5 tables! Book your seat before they are all gone!</h3>
+            <hr>
+            <a href="/tables">
+                <button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-plus" id="tables"></span> View Tables</button>
+            </a>
+            <a href="/reservations">
+                <button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-plus" id="reserve"></span> Make Reservation</button>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $("#tables").on("click", function() {
+        event.preventDefault();
+        //on click show the survey
+        app.get("/tables", function(req, res) {
+            res.sendFile(path.join(__dirname, "tables.html"));
+        });
+    });
+        $("#reserve").on("click", function() {
+        event.preventDefault();
+        //on click show the survey
+        app.get("/reservations", function(req, res) {
+            res.sendFile(path.join(__dirname, "reservation.html"));
+        });
+    });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
