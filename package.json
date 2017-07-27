@@ -12,5 +12,13 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colinmcdonnell/hotrestaurant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colinmcdonnell/hotrestaurant/issues"
+  },
+  "homepage": "https://github.com/colinmcdonnell/hotrestaurant#readme"
 }

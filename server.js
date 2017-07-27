@@ -15,6 +15,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+var newReservation;
+
+app.post("/api/new", function(req, res) {
+	newReservation = req.body;
+	console.log(newReservation);
+	tables.push(newReservation);
+	res.json(newReservation);
+});
+
+app.get("/api/", function(req, res){
+	res.json(newReservation)
+})
+
+var tables = [];
+
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
@@ -27,6 +42,13 @@ app.get("/reservations", function(req, res) {
   res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
+app.post("/reservations", function(req, res) {
+  res.sendFile(path.join(__dirname, "reservation.html"));
+});
+
+app.post('/tables', function(req, res) {
+	res.sendFile(path.join(__dirname, "tables.html"));
+});
 
 // Starts the server to begin listening
 // =============================================================
