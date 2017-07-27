@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
+  <title>Hot Restaurant</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -16,7 +16,7 @@
       <h1>Hot Restaurant</h1>
       <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
       <hr>
-      <a href="/reservations"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Tables</button></a>
+      <a href="/tables"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Tables</button></a>
     </div>
     <div class="row">
 
@@ -35,18 +35,18 @@
               </div>
 
               <div class="form-group">
-                <label for="role">Phone Number</label>
-                <input type="text" class="form-control" id="role">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber">
               </div>
 
               <div class="form-group">
-                <label for="age">Email</label>
-                <input type="text" class="form-control" id="age">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email">
               </div>
 
               <div class="form-group">
-                <label for="age">Unique ID</label>
-                <input type="text" class="form-control" id="age">
+                <label for="uniqueID">Unique ID</label>
+                <input type="text" class="form-control" id="uniqueID">
               </div>
 
             </form>
@@ -61,25 +61,26 @@
     </div>
   </div>
 
-<!--   <script type="text/javascript">
-    // Question: What does this code do?
+  <script type="text/javascript">
+    
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
-      var newCharacter = {
+      var newReservation = {
         name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
+        phoneNumber: $("#phoneNumber").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueID: $("#uniqueID").val().trim()
       };
 
-      // Question: What does this code do??
-      $.post("/api/new", newCharacter)
+      
+      $.post("/api/new", newReservation)
       .done(function(data) {
         console.log(data);
-        alert("Adding character...");
+        alert("Adding reservations...");
       });
     });
-  </script> -->
+
+  </script>
 
 </body>
 </html>
